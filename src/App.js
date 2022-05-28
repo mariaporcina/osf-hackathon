@@ -3,8 +3,12 @@ import "./App.css";
 // import Footer from "./components/Footer";
 import Main from "./components/Main";
 import ProductCard from "./components/ProductCard";
+import Card from "./components/Card";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+
 
 function App() {
 
@@ -23,9 +27,12 @@ function App() {
   return (
     <div className="App">
       <Main>
-        {products.map((value, index) => {
+        <Header />
+        <Card />
+        <Footer />
+        {/* {products.map((value, index) => {
           return <ProductCard key={index} id={value.id} currency={value.currency} name={value.title} img={value.image}/>;
-        })}
+        })} */}
       </Main>
     </div>
   );
