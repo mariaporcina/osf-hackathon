@@ -1,7 +1,11 @@
 import React from 'react'
+import './Components.css'
 
-export default function Main() {
+export default function Main(props) {
+
   return (
-    <div>Main</div>
+    <div className='main'>
+      {props.children}
+    </div>
   )
 }
