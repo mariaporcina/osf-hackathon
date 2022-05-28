@@ -24,10 +24,11 @@ server.get('CategoryList', function (req, res, next) {
 
 });
 
-server.get('Send', function (req, res, next) {
+server.get('ProductsListByCategory', function (req, res, next) {
+    var categoryID = req.querystring.categoryID;
     var productSearchModel = new ProductSearchModel();
-    productSearchModel.addRefinementValues('brand', 'Sony');
-    productSearchModel.search()
+    productSearchModel.setCategoryID(categoryID.toString());
+    productSearchModel.search();
     var products = productSearchModel.getProductSearchHits();
     var productsReturn = [];
     while (products.hasNext()){
@@ -35,12 +36,17 @@ server.get('Send', function (req, res, next) {
         var productName = product.getName();
         var productID = product.getID();
         var productPrice = product.getPriceModel().getPrice().value;
-        var productImage = product.getImages('thumbnail');
+        var productImage = [];
+        var Image = product.getImages('large');
+        Image.toArray().forEach(function(imageUrl){
+            productImage.push(imageUrl.httpsURL.toString())
+        });
         var productURL = URLUtils.https('Catalog-Show', 'pid', productID).toString();
         var productDescription = product.getLongDescription();
         var productBrand = product.getBrand();
-        var productCategory = product.getPrimaryCategory().ID;
-        var productCategoryName = product.getPrimaryCategory().getDisplayName();
+        /* var productCategory = product.getPrimaryCategory().ID; */
+        var productCategory = categoryID;
+        var productCategoryName = CatalogMgr.getCategory(categoryID).getDisplayName();
         productsReturn.push({
             'productName': productName,
             'productID': productID,
@@ -54,7 +60,7 @@ server.get('Send', function (req, res, next) {
         });
     }
     res.json(productsReturn);
-        next()
+    next();
 
 });
 
@@ -70,7 +76,11 @@ server.get('ProductsListByCategory', function (req, res, next) {
         var productName = product.getName();
         var productID = product.getID();
         var productPrice = product.getPriceModel().getPrice().value;
-        var productImage = product.getImages('thumbnail');
+        var productImage = [];
+        var Image = product.getImages('large');
+        Image.toArray().forEach(function(imageUrl){
+            productImage.push(imageUrl.httpsURL.toString())
+        });
         var productURL = URLUtils.https('Catalog-Show', 'pid', productID).toString();
         var productDescription = product.getLongDescription();
         var productBrand = product.getBrand();
