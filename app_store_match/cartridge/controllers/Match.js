@@ -6,12 +6,22 @@ var URLUtils = require('dw/web/URLUtils');
 var CatalogMgr = require('dw/catalog/CatalogMgr');
 var ProductSearchModel = require('dw/catalog/ProductSearchModel');
 
-server.get('CategoryList', function () {
-    var productSearchModel = new ProductSearchModel();
-    productSearchModel.addRefinementValues('category', 'root');
-    productSearchModel.search()
-    var match = productSearchModel.getProductSearchHits();
-    var t = "t";
+server.get('CategoryList', function (req, res, next) {
+    var masterCategories = CatalogMgr.getSiteCatalog().getRoot().onlineSubCategories;
+    var categoryList = [];
+    masterCategories.toArray().forEach(function(element) {
+        var subCategories = element.onlineSubCategories;
+        var subCategoryList = [];
+        subCategories.toArray().forEach(function(key) {
+            subCategoryList.push(key.ID)
+        });
+        var buff = {};
+        buff[element.displayName] = subCategoryList;
+        categoryList.push(buff);
+    });
+    res.json(categoryList);
+    next()
+
 });
 
 server.get('Send', function (req, res, next) {
