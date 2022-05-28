@@ -58,6 +58,41 @@ server.get('Send', function (req, res, next) {
 
 });
 
+server.get('ProductsListByCategory', function (req, res, next) {
+    var categoryID = req.querystring.categoryID;
+    var productSearchModel = new ProductSearchModel();
+    productSearchModel.setCategoryID(categoryID.toString());
+    productSearchModel.search();
+    var products = productSearchModel.getProductSearchHits();
+    var productsReturn = [];
+    while (products.hasNext()){
+        var product = products.next().getProduct();
+        var productName = product.getName();
+        var productID = product.getID();
+        var productPrice = product.getPriceModel().getPrice().value;
+        var productImage = product.getImages('thumbnail');
+        var productURL = URLUtils.https('Catalog-Show', 'pid', productID).toString();
+        var productDescription = product.getLongDescription();
+        var productBrand = product.getBrand();
+        /* var productCategory = product.getPrimaryCategory().ID; */
+        var productCategory = categoryID;
+        var productCategoryName = CatalogMgr.getCategory(categoryID).getDisplayName();
+        productsReturn.push({
+            'productName': productName,
+            'productID': productID,
+            'productPrice': productPrice,
+            'productImage': productImage,
+            'productURL': productURL,
+            'productDescription': productDescription,
+            'productBrand': productBrand,
+            'productCategory': productCategory,
+            'productCategoryName': productCategoryName
+        });
+    }
+    res.json(productsReturn);
+    next();
+
+});
 
 
 module.exports = server.exports();
