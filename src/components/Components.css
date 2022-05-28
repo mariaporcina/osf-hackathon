@@ -1,0 +1,28 @@
+.main {
+    background-color: rgba(0, 0, 0, 0.911);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+
+
+.card {
+    width: 320px;
+    height: auto;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 10px 0;
+    background-color: rgb(78, 77, 75);
+    backdrop-filter: blur(10px);
+
+    background: rgba(7, 7, 7, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.164);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+}
