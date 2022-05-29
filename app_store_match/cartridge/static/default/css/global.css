@@ -18237,4 +18237,10 @@ button.close-modal-button.close-button-storematch span {
   vertical-align: super;
 }
 
+.div-storematch-banner {
+  background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F598%2F445%2Foriginal%2Flight-pastel-color-vector-low-poly-crystal-background-polygon-design-pattern-low-poly-illustration-background.jpg&f=1&nofb=1);
+  background-size: cover;
+  font-family: monospace;
+}
+
 /*# sourceMappingURL=global.css.map*/
