@@ -86,7 +86,9 @@ Exemple of return:
 
 ### `GET:/Match-ProductListByCategory`
 @param `categoryID`
+
 @param `customerNo`
+
 Example of return:
 ##
     "0": {
@@ -105,6 +107,7 @@ Example of return:
 
 ### `GET:/Match-CheckExistingWishList`
 @param `customerNo`
+
 Example of Return
 ##
     "0": {
@@ -122,7 +125,9 @@ Example of Return
 
 ### `POST:/Match-AddToMatchList`
 @param `productID`
+
 @param `customerNo`
+
 Example of Return
 ##
     "0": {
