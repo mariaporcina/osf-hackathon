@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+
+import { Link } from 'react-router-dom';
+
 import CategoryCard from "./categoryCard";
 import './Components.css'
 
@@ -22,6 +25,7 @@ export default function CategoriesPage() {
     <div className="categories-page-container">
       <div className="title-container">
         <h1 style={testStyle}>Choose a Category</h1>
+        <Link to="/favs">My Favorites</Link>
       </div>
       <div className="category-cards-container">
         {categories.map((category, index) => (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 // import { fav } from "./ProductCard";
 
 import axios from "axios";
@@ -12,8 +12,8 @@ function retrieveCustomerId(params) {
 }
 
 export default function Fav() {
-  const location = useLocation()
-  const { fav } = location.state
+  // const location = useLocation()
+  // const { fav } = location.state
 
   const [fs, setFs] = useState([]);
 
@@ -24,10 +24,10 @@ export default function Fav() {
       .then((res) => setFs(Object.values(res.data)));
   }, []);
 
-  const remove = (index) => {
-    fav.fav.splice(index, 1);
-    setFs(Object.values([...fav]));
-  };
+  // const remove = (index) => {
+  //   fav.fav.splice(index, 1);
+  //   setFs(Object.values([...fav]));
+  // };
 
   return (
     <div className="favori">
@@ -36,20 +36,16 @@ export default function Fav() {
       </div>
       <div className="body card-body product-card-container">
         <div className="card-body container">
-          <div className="wrapper-style">
+          {fs.map((product, index) => (
+            <div key={index} className="wrapper-style">
+              <Card product={product} />
 
-            {fs.map((product, index) => (
-              <div key={index}>
-                <Card product={product} />
-
-                <button
-                    className="btn"
-                    onClick={ () => remove(index) }
-                  >Remove</button>
-              </div>
-            ))}
-
-          </div>
+              {/* <button
+                  className="btn"
+                  // onClick={ () => remove(index) }
+                >Remove</button> */}
+            </div>
+          ))}
         </div>
       </div>
     </div>
