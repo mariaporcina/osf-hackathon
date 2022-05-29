@@ -10,7 +10,7 @@ import CardFooter from './CardFooter';
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const fav = []
+// export const fav = []
 
 export const ProductCard = (props) => {
   const location = useLocation()
@@ -41,11 +41,13 @@ export const ProductCard = (props) => {
     setProducts(products.slice(1, products.length));
   }
 
+  console.log(fav)
 
   return (
     <div className="body card-body product-card-container">
       <Link to="/">Back to Category Selection</Link>
-      <Link to="/favs">My Favorites</Link>
+      <Link to="/favs" state={{ fav: {fav} }}>My Favorites</Link>
+
       <div className="card-body container">
         {( products.length > 0 ) ? (
           <div className="wrapper-style">

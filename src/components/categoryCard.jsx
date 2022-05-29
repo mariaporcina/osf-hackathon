@@ -6,6 +6,7 @@ const CategoryCard = props => {
     return (
       <div className="category-cards-holder">
         <h3 className="category-title"> { props.category.category} </h3>
+        <hr className="divider"/>
         <ul>
           { props.category.subcategory.map(sub => (
           <li className="sub-categories-links">

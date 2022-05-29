@@ -1,16 +1,22 @@
 import React, { useState } from "react";
-import { fav } from "./ProductCard";
+import { useLocation } from "react-router-dom";
+// import { fav } from "./ProductCard";
+
 
 
 export default function Fav() {
+
+  const location = useLocation()
+  const { fav } = location.state
   
   console.log(fav)
+  console.log(typeof fav)
 
   const [fs, setFs] = useState([]);
   console.log(fs);
   const kkk = (index) => {
     fav.splice(index, 1);
-    setFs([...fav]);
+    setFs(Object.values([...fav]));
   };
   return (
     <div className="favori">
@@ -38,7 +44,6 @@ export default function Fav() {
             className="card"
           >
             <button
-              
               style={{
                 position: "absolute",
                 top: "2px",

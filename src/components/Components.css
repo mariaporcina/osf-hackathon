@@ -22,7 +22,7 @@
 .wrapper-style {
   position: relative;
   width: 250px;
-  height: 650px;
+  height: 800px;
   /* border: 1px solid black; */
 }
 
@@ -130,15 +130,22 @@ h1.suggestion {
   height: 25vh;
   margin: 1rem 0;
   /* background: rgba(255, 255, 255, 0.089); */
-  background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fosf.digital%2Flibrary%2Fmedia%2Fosf%2Fdigital%2Fmodules%2FSocial-Media-Images%2FHP-SM-image.jpg&f=1&nofb=1');
+  /* background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fosf.digital%2Flibrary%2Fmedia%2Fosf%2Fdigital%2Fmodules%2FSocial-Media-Images%2FHP-SM-image.jpg&f=1&nofb=1'); */
+  /* background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.tGVMpCG5HCRe9G7LKFCuWQHaEK%26pid%3DApi&f=1'); */
+  
+  background-size: contain;
+  /* background-color: rgba(125, 211, 207, 0.678); */
+  background: linear-gradient(to right, rgba(125, 211, 207), rgb(238, 206, 164));
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: #fff;
+  color: rgb(0, 0, 0);
 
   padding: 1rem;
   text-align: center;
+  box-shadow: 5px 5px 5px rgba(41, 40, 40, 0.5);
+
 }
 
 .category-cards-holder:hover{
@@ -159,7 +166,9 @@ h1.suggestion {
 }
 
 .category-cards-holder a {
-  color: #fff;
+  font-family: 'Kaushan Script', sans-serif;
+  font-size: 1.3rem !important;
+  color: rgb(0, 0, 0);
   font-size: 1rem;
 }
 
@@ -189,7 +198,8 @@ h1.suggestion {
   background-color: rgb(100, 100, 100);
   border-radius: 20px;
   padding: 10px 0;
-  min-width: 25vw;
+  min-width: 35vw;
+  background: repeating-linear-gradient(0deg, black, transparent 500px);
 }
 
 .product-card-container .actions-styles {
@@ -215,3 +225,19 @@ h1.suggestion {
   font-size: 3rem;
 }
 
+.divider {
+  border: 1px solid black;
+}
+
+.price-holder {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-holder h3 {
+  font-size: 3rem;
+}

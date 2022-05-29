@@ -18,6 +18,9 @@ const Card = ({ zIndex = 0, product }) => {
           className="card product-image-container"
         >
         </div>
+        <div className="price-holder d-flex text-align-center">
+          <h3>{product.productCurrency} {product.productPrice}</h3>
+        </div>
       {/* </div> */}
       </>
     );
