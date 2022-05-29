@@ -20,3 +20,25 @@
     padding: 20px 0px 20px 0px;
     margin: 0px 0px 40px 0px;
 }
+.modal-body-storematch {
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.modal-content-storematch {
+    width: 100vw;
+}
+button.close-modal-button.close-button-storematch {
+    position: absolute;
+    right: 35px;
+    top: 30px;
+    border-radius: 30px;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    background-color: #ffffff59;
+}
+button.close-modal-button.close-button-storematch span {
+    vertical-align: super;
+}
