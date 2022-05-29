@@ -56,8 +56,8 @@ export const ProductCard = (props) => {
 
   return (
     <div className="body card-body product-card-container">
-      <Link to="/">Back to Category Selection</Link>
-      <Link to="/favs" state={{ fav: {fav} }}>My Favorites</Link>
+      <h3><Link to="/favs" state={{ fav: {fav} }}>My Favorites</Link></h3>
+      <h3 className="backToHome"><Link to="/">Back to Category Selection</Link></h3>
 
       <div className="card-body container">
         {( products.length > 0 ) ? (

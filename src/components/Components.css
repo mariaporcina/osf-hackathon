@@ -11,11 +11,11 @@
   display: none;
 }
 
-.app::-webkit-scrollbar {
+/* .app::-webkit-scrollbar {
   overflow-x: hidden;
   overflow-y: hidden;
   display: none;
-}
+} */
 
 
 /* ProductCard */
@@ -179,6 +179,8 @@ h1.suggestion {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 680px;
+  overflow-y: scroll;
 }
 .product-card-container a {
   font-size: 2rem;
@@ -195,7 +197,7 @@ h1.suggestion {
 
 .favori .product-card-container .card-body{
   flex-wrap: wrap;
-  max-width: 950px;
+  max-width: 1220px;
 }
 
 .product-card-container .wrapper-style {
@@ -207,12 +209,20 @@ h1.suggestion {
   background: repeating-linear-gradient(0deg, black, transparent 500px);
 }
 
+.favori h2{
+  font-family: 'kaushan Script', sans-serif;
+  text-align: center;
+  color: #fff;
+  padding-top: 15px;
+}
+
 .favori .product-card-container .wrapper-style {
-  max-width: 29%;
-  width: 100%;
-  margin: 8px;
+  background: linear-gradient(0deg,#000,rgba(0,0,0,.45) 500px);
   height: auto;
-  background: linear-gradient(0deg, black, rgb(0 0 0 / 45%) 500px);
+  margin: 8px;
+  max-width: 30%;
+  flex-basis: 100%;
+  min-width: unset;
 }
 
 .product-card-container .actions-styles {
@@ -267,4 +277,23 @@ h1.suggestion {
 .favori .price-holder h3{
   font-size: 2.3rem;
   color: #fff;
+}
+
+.product-card-container::-webkit-scrollbar{
+  display: block;
+  width: 12px;
+  background-color: rgb(255 255 255 / 39%);
+  border-radius: 10px;
+}
+.product-card-container::-webkit-scrollbar-button{
+}
+.product-card-container::-webkit-scrollbar-thumb{
+  background-color: rgb(255 255 255 / 40%);
+  border-radius: 10px;
+}
+.product-card-container::-webkit-scrollbar-track{
+}
+.product-card-container::-webkit-scrollbar-track-piece{}
+.product-card-container::-webkit-scrollbar-corner{}
+.product-card-container::-webkit-resizer{
 }
