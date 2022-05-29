@@ -10,6 +10,8 @@ import CardFooter from './CardFooter';
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { customerId } from "../App";
+
 // export const fav = []
 
 export const ProductCard = (props) => {
@@ -19,7 +21,7 @@ export const ProductCard = (props) => {
   const [products, setProducts] = useState([]);
   const [fav, setFav] = useState([]);
 
-  console.log(window.location);
+  console.log(customerId);
 
   useEffect(() => {
 
