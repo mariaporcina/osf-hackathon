@@ -5,11 +5,10 @@ body {
   box-sizing: border-box;
   font-size: 62.5%;
   height: 100vh;
-  width: 100vw;
-  /* background: #7429a0ec; */
   background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F598%2F445%2Foriginal%2Flight-pastel-color-vector-low-poly-crystal-background-polygon-design-pattern-low-poly-illustration-background.jpg&f=1&nofb=1');
   background-size: cover;
   background-repeat: no-repeat;
+  overflow-y: scroll;
 }
 
 #root {
@@ -26,4 +25,14 @@ body {
   font-family: "Kaushan Script", cursive;
   color: #fff;
   font-size: 1.5rem;
+}
+
+.backToHome{
+  text-align: center;
+  font-size: 18px;
+}
+.backToHome > a{
+  color: #fff;
+  font-family: sans-serif !important;
+  font-size: inherit !important;
 }
