@@ -19,6 +19,8 @@ export const ProductCard = (props) => {
   const [products, setProducts] = useState([]);
   const [fav, setFav] = useState([]);
 
+  console.log(window.location);
+
   useEffect(() => {
 
     axios
@@ -28,8 +30,9 @@ export const ProductCard = (props) => {
       .then((res) => setProducts(Object.values(res.data)));
   }, []);
 
-
   const addToFavorite = (direction) => {
+    // axios.post()
+
     if(direction === 'right'){
       const swipedElement = products[0];
       setFav([...fav, swipedElement]);
