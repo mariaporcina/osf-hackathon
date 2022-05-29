@@ -10,7 +10,7 @@
     try{
         var masterCategories = CatalogMgr.getSiteCatalog().getRoot().onlineSubCategories;
         var categoryLists = {};
-        var teste = [];
+        var categoryListsObject = [];
         masterCategories.toArray().forEach(function(element) {
             var categoryList = {};
             var subCategories = element.onlineSubCategories;
@@ -20,9 +20,9 @@
             });
             categoryList['category'] = element.displayName
             categoryList['subcategory'] = subCategoryList;
-            teste.push(categoryList);
+            categoryListsObject.push(categoryList);
         });
-        categoryLists['data'] = teste;
+        categoryLists['data'] = categoryListsObject;
         return categoryLists;
     }catch(err){
         return error = {
