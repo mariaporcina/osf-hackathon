@@ -75,13 +75,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### `/Match-CategoryList`
 Exemple of return:
 ##
-##    "0": {
-##        "New Arrivals": [
-##            "newarrivals-womens",
-##            "newarrivals-mens",
-##            "newarrivals-electronics"
-##        ]
-##    }
+    "0": {
+        "New Arrivals": [
+            "newarrivals-womens",
+            "newarrivals-mens",
+            "newarrivals-electronics"
+        ]
+    }
 ##
 
 ### `/Match-ProductListByCategory`
