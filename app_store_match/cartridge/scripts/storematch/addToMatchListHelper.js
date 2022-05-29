@@ -22,10 +22,7 @@ function addToMatchList(productID, customerNo) {
                 object.custom.productID =  object.custom.productID + "," + productID;
             });
         }
-        return success ={
-            'success': true,
-            'message': "success"
-        };
+        return true;
     }catch(err){
         return error = {
             'success': false,
