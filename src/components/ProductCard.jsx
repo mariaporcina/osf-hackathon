@@ -21,7 +21,7 @@ export const ProductCard = (props) => {
   const [products, setProducts] = useState([]);
   const [fav, setFav] = useState([]);
 
-  console.log(customerId);
+  // console.log(customerId);
 
   useEffect(() => {
 
@@ -65,6 +65,7 @@ export const ProductCard = (props) => {
               onSwipe={(direction) => {addToFavorite(direction)}}
             >
               <Card product={products[0]} />
+              <p>{customerId}</p>
             </Swipeable>
           </div>
         ) : <Card zIndex={-2} product="No more cards" /> }
