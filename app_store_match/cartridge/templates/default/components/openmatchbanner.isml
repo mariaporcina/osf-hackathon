@@ -1,0 +1,9 @@
+<div class="div-storematch-banner">
+    <p>${Resource.msg('store_match.title', 'store_match', null)}</p>
+    <p>${Resource.msg('store_match.subtitle', 'store_match', null)}</p>
+    <button
+    class="storematch-modal btn btn-save btn-block btn-primary"
+    data-modal-url="${URLUtils.url('Match-ModalShow')}">
+        ${Resource.msg('store_match.banner.try', 'store_match', null)}
+    </button>
+</div>

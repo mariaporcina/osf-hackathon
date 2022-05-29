@@ -99,8 +99,16 @@ server.get('ProductsListByCategory', function (req, res, next) {
 
     res.json(productsReturn);
     next();
-
 });
 
+server.get('ModalShow', function (req, res, next) {
+    if(req.currentCustomer.profile != undefined){
+        res.render('components/modal',{customerNo:req.currentCustomer.profile.customerNo});
+        next();
+    }else{
+        res.json({login:true})
+        next();
+    }
+});
 
 module.exports = server.exports();
