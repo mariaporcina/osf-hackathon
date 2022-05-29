@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import CategoryCard from "./categoryCard";
 import './Components.css'
 
+import { customerId } from "../App";
+
 const testStyle = {
   color: "#fff"
 }
@@ -21,7 +23,7 @@ export default function CategoriesPage() {
   return (
     <div className="categories-page-container">
       <div className="title-container">
-        <h1 style={testStyle}>Choose a Category</h1>
+        <h1 style={testStyle}>Choose a Category {customerId}</h1>
       </div>
       <div className="category-cards-container">
         {categories.map((category, index) => (
