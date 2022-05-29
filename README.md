@@ -68,3 +68,65 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+=====================================================================================================================
+# Endpoints created for plugin StoreMatch
+### `/Match-CategoryList`
+Exemple of return:
+##
+##    "0": {
+##        "New Arrivals": [
+##            "newarrivals-womens",
+##            "newarrivals-mens",
+##            "newarrivals-electronics"
+##        ]
+##    }
+##
+
+### `/Match-ProductListByCategory`
+@param categoryID
+@param customerNo
+Example of return:
+##
+##    "0": {
+##        "productName": "High Waist Pant",
+##        "productID": "25588935M",
+##        "productPrice": 0,
+##        "productImage": {},
+##        "productURL": "https://zzrb-494.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/Catalog-Show?pid=25588935M",
+##        "productDescription": {},
+##        "productBrand": null,
+##        "productCategory": "newarrivals-womens",
+##        "productCategoryName": "Womens"
+##    }
+##
+
+
+### `/Match-CheckExistingWishList`
+@param customerNo
+Example of Return
+##
+##    "0": {
+##        "productName": "High Waist Pant",
+##        "productID": "25588935M",
+##        "productPrice": 0,
+##        "productImage": {},
+##        "productURL": "https://zzrb-494.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/Catalog-Show?pid=25588935M",
+##        "productDescription": {},
+##        "productBrand": null,
+##        "productCategory": "newarrivals-womens",
+##        "productCategoryName": "Womens"
+##    }
+##
+
+### `/Match-AddToMatchList`
+@param productID
+@param customerNo
+Example of Return
+##
+##    "0": {
+##        "success": "true",
+##        "message": "done",
+##    }
+##
