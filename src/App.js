@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
+import Wishlist from "./components/Wishlist";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           return <ProductCard key={index} id={value.id} currency={value.currency} name={value.title} img={value.image}/>;
         })} */}
       </Main>
+      <Wishlist />
     </div>
   );
 }

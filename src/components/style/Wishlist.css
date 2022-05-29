@@ -1,0 +1,9 @@
+.wishlistSecion{}
+.wishlistSecion h2{
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
+}
+.wishlistSecion ul{
+    list-style: none;
+}
+.wishlistSecion ul li{}
