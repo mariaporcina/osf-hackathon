@@ -1,7 +1,10 @@
-<div class="modal-dialog modal-dialog-centered my-modal" role="document">
-    <div class="modal-content ajax-spinner modal-with-radius">
-        <div class="modal-body">
-            <iframe src='https://hackathon-l2-mrs-beta.vercel.app?customerID=${pdict.customerNo}' width="456px" height="550px"></iframe>
+<div class="modal-dialog modal-dialog-centered my-modal m-0" role="document">
+    <div class="modal-content ajax-spinner modal-with-radius modal-content-storematch">
+        <div class="modal-body modal-body-storematch">
+            <button type="button" class="close-modal-button close-button-storematch" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <iframe src='https://hackathon-l2-mrs-beta.vercel.app?customerID=${pdict.customerNo}' width="100%" height="100%"></iframe>
         </div>
     </div>
 </div>
