@@ -1,7 +1,7 @@
 import "./App.css";
 import Routing from './components/routes'
 
-export const customerId = window.location;
+export const customerId = window.location.search;
 
 function App() {
   return (
