@@ -81,22 +81,22 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./cartridges/app_training/cartridge/client/default/js/util.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./cartridges/app_store_match/cartridge/client/default/js/util.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./cartridges/app_training/cartridge/client/default/js/util.js":
-/*!*********************************************************************!*\
-  !*** ./cartridges/app_training/cartridge/client/default/js/util.js ***!
-  \*********************************************************************/
+/***/ "./cartridges/app_store_match/cartridge/client/default/js/util.js":
+/*!************************************************************************!*\
+  !*** ./cartridges/app_store_match/cartridge/client/default/js/util.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 module.exports = function (include) {
   if (typeof include === 'function') {

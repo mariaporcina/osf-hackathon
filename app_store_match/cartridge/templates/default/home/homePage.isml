@@ -5,10 +5,9 @@
         assets.addCss('/css/homePage.css');
     </isscript>
 
-    <iscomment> including button to open modal </iscomment>
+    <iscomment> modal button for storematch </iscomment>
     <isinclude template="components/openmatch" sf-toolkit="on" />
 
-    <!-- +1.888.555.0199 --><!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demadware customers can remove this.-->
     <div class="home-main homepage">
         <isslot id="home-main-m" description="Main home page slot." context="global" />
     </div>
@@ -18,6 +17,9 @@
             <isslot id="home-categories-m" description="Categories slots on the home page." context="global" />
         </div>
     </div>
+
+    <iscomment> banner for storematch </iscomment>
+    <isinclude template="components/openmatchbanner" sf-toolkit="on" />
 
     <div class="container home-product-tiles homepage">
         <div class="hp-product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">

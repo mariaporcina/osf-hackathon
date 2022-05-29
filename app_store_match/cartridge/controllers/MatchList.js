@@ -3,7 +3,6 @@
 var server = require('server');
 
 var URLUtils = require('dw/web/URLUtils');
-var userLoggedIn = require('*/cartridge/scripts/middleware/userLoggedIn');
 var Customer = require('dw/customer/Customer');
 var Resource = require('dw/web/Resource');
 var CustomObjectMgr = require("dw/object/CustomObjectMgr");
@@ -12,7 +11,7 @@ var ProductSearchModel = require('dw/catalog/ProductSearchModel');
 
 server.get("CheckExistingWishList", function(req, res, next){
     var object = CustomObjectMgr.getCustomObject("store_match_wishlist", req.currentCustomer.profile.customerNo);
-    if(!object){
+    if(object){
         //TODO: Send list..
     }else{
         res.json({

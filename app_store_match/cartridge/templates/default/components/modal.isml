@@ -1,1 +1,7 @@
-<iframe src="https://hackathon-l2-f5s0ff4tz-maria-osfdigital.vercel.app/"></iframe>
+<div class="modal-dialog modal-dialog-centered my-modal" role="document">
+    <div class="modal-content ajax-spinner modal-with-radius">
+        <div class="modal-body">
+            <iframe src='https://hackathon-l2-qsqdumure-l2mrs.vercel.app?customerID=${pdict.customerNo}' width="456px" height="550px"></iframe>
+        </div>
+    </div>
+</div>

@@ -1,51 +1,37 @@
-'use strict';
+"use strict";
 
-const openModal = () => {
-
-    const button = $('.button-open-modal');
-    const closeButton = $('.modal-close-button');
-
-    $(document).on('click', closeButton, function() {
-        $('#myModal').modal('hide');
-    });
-
-    console.log(button);
-    button.on('click', function() {
+/**
+ * Renders a modal window
+ */
+const modalShow = () => {
+    $('.storematch-modal').click(function(){
         $.ajax({
-            method: 'GET',
-            url: button.attr('data-url'),
+            url: $(".storematch-modal").attr("data-modal-url"),
+            method: "GET",
             success: function(data) {
-                const modal = $(`
-                    <div class="modal fade my-exercise-modal" id="myModal" role="dialog">
-                        <div class="modal-dialog modal-dialog-centered my-modal" role="document">
-                            <div class="modal-content ajax-spinner modal-with-radius">
-                                <button type="button" class="close-modal-button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                                <div class="modal-body">
-                                    ${data}
-                                </div>
-                                <button class="modal-close-button btn btn-primary">OK</button>
-                            </div>
+                if(data.login){
+                    location.href="/on/demandware.store/Sites-RefArch-Site/en_US/Login-Show"
+                }else{
+                    var $html = $(`
+                        <div class="modal fade my-exercise-modal" id="myModal" role="dialog">
+                            ${data}
                         </div>
-                    </div>
-                `);
+                    `);
 
-                modal.on('hidden.bs.modal', event => {
-                    $(event.target).remove();
-                });
+                    $html.on("hidden.bs.modal", e => {
+                        $(e.target).remove();
+                    });
 
-                modal.modal();
+                    $html.modal();
+                }
             },
-            error: function(err) {
-                console.error(err);
+            error: function (err) {
+                console.log(err);
             }
         });
-
-        return false;
-    });
-}
+    })
+};
 
 module.exports = () => {
-    openModal()
-}
+    modalShow();
+};

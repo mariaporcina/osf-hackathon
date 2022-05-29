@@ -1,0 +1,22 @@
+.div-storematch {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    z-index: 999;
+    position: fixed;
+}
+.div-storematch:hover {
+    .text-hover-storematch{
+        display: block;
+    }
+}
+.text-hover-storematch{
+    display: none;
+}
+.div-storematch-banner {
+    text-align: center;
+    background-color: #00a1e029;
+    /* color: white; */
+    padding: 20px 0px 20px 0px;
+    margin: 0px 0px 40px 0px;
+}
