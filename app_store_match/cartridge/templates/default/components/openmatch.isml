@@ -1,0 +1,8 @@
+<div class="div-storematch">
+    <button
+    class="storematch-modal btn btn-save btn-block btn-primary"
+    data-modal-url="${URLUtils.url('Match-ModalShow')}">
+        Store Match
+        <p class="text-hover-storematch">Your store as you never seen</p>
+    </button>
+</div>
