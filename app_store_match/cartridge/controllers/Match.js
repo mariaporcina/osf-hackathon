@@ -21,32 +21,27 @@ server.get('CategoryList', function (req, res, next) {
     });
     res.json(categoryList);
     next()
-
 });
 
-server.get('ProductsListByCategory', function (req, res, next) {
-    var categoryID = req.querystring.categoryID;
+server.get('Send', function (req, res, next) {
+    var customerNo = req.querystring.customerNo;
     var productSearchModel = new ProductSearchModel();
-    productSearchModel.setCategoryID(categoryID.toString());
-    productSearchModel.search();
+    productSearchModel.addRefinementValues('brand', 'Sony');
+    productSearchModel.search()
     var products = productSearchModel.getProductSearchHits();
     var productsReturn = [];
+    productsReturn["CustomerNo"] = customerNo;
     while (products.hasNext()){
         var product = products.next().getProduct();
         var productName = product.getName();
         var productID = product.getID();
         var productPrice = product.getPriceModel().getPrice().value;
-        var productImage = [];
-        var Image = product.getImages('large');
-        Image.toArray().forEach(function(imageUrl){
-            productImage.push(imageUrl.httpsURL.toString())
-        });
+        var productImage = product.getImages('thumbnail');
         var productURL = URLUtils.https('Catalog-Show', 'pid', productID).toString();
         var productDescription = product.getLongDescription();
         var productBrand = product.getBrand();
-        /* var productCategory = product.getPrimaryCategory().ID; */
-        var productCategory = categoryID;
-        var productCategoryName = CatalogMgr.getCategory(categoryID).getDisplayName();
+        var productCategory = product.getPrimaryCategory().ID;
+        var productCategoryName = product.getPrimaryCategory().getDisplayName();
         productsReturn.push({
             'productName': productName,
             'productID': productID,
@@ -60,18 +55,20 @@ server.get('ProductsListByCategory', function (req, res, next) {
         });
     }
     res.json(productsReturn);
-    next();
+        next()
 
 });
 
 server.get('ProductsListByCategory', function (req, res, next) {
+    var customerNo = req.querystring.customerNo;
     var categoryID = req.querystring.categoryID;
     var productSearchModel = new ProductSearchModel();
     productSearchModel.setCategoryID(categoryID.toString());
     productSearchModel.search();
     var products = productSearchModel.getProductSearchHits();
     var productsReturn = [];
-    while (products.hasNext()){
+    productsReturn["CustomerNo"] = customerNo;
+    while (products.hasNext() && productsReturn.length < 51){
         var product = products.next().getProduct();
         var productName = product.getName();
         var productID = product.getID();
@@ -99,6 +96,7 @@ server.get('ProductsListByCategory', function (req, res, next) {
             'productCategoryName': productCategoryName
         });
     }
+
     res.json(productsReturn);
     next();
 
