@@ -108,7 +108,7 @@ Example of return:
 ### `GET:/Match-CheckExistingWishList`
 @param `customerNo`
 
-Example of Return
+Example of Return:
 ##
     "0": {
         "productName": "High Waist Pant",
@@ -128,7 +128,7 @@ Example of Return
 
 @param `customerNo`
 
-Example of Return
+Example of Return:
 ##
     "0": {
         "success": "true",
