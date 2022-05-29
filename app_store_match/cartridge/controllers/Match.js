@@ -11,42 +11,6 @@ server.get('CategoryList', function (req, res, next) {
     next()
 });
 
-server.get('Send', function (req, res, next) {
-    var customerNo = req.querystring.customerNo;
-    var productSearchModel = new ProductSearchModel();
-    productSearchModel.addRefinementValues('brand', 'Sony');
-    productSearchModel.search()
-    var products = productSearchModel.getProductSearchHits();
-    var productsReturn = [];
-    productsReturn["CustomerNo"] = customerNo;
-    while (products.hasNext()){
-        var product = products.next().getProduct();
-        var productName = product.getName();
-        var productID = product.getID();
-        var productPrice = product.getPriceModel().getPrice().value;
-        var productImage = product.getImages('thumbnail');
-        var productURL = URLUtils.https('Catalog-Show', 'pid', productID).toString();
-        var productDescription = product.getLongDescription();
-        var productBrand = product.getBrand();
-        var productCategory = product.getPrimaryCategory().ID;
-        var productCategoryName = product.getPrimaryCategory().getDisplayName();
-        productsReturn.push({
-            'productName': productName,
-            'productID': productID,
-            'productPrice': productPrice,
-            'productImage': productImage,
-            'productURL': productURL,
-            'productDescription': productDescription,
-            'productBrand': productBrand,
-            'productCategory': productCategory,
-            'productCategoryName': productCategoryName
-        });
-    }
-    res.json(productsReturn);
-        next()
-
-});
-
 server.get('ProductsListByCategory', function (req, res, next) {
     var customerNo = req.querystring.customerNo;
     var categoryID = req.querystring.categoryID;

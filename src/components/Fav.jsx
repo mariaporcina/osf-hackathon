@@ -1,62 +1,56 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+// import { useLocation } from "react-router-dom";
 // import { fav } from "./ProductCard";
 
+import axios from "axios";
 
+import Card from "./Card";
+import { searchParams } from "../App";
+
+function retrieveCustomerId(params) {
+  return params.split('=')[1];
+}
 
 export default function Fav() {
-
-  const location = useLocation()
-  const { fav } = location.state
-  
-  console.log(fav)
-  console.log(typeof fav)
+  // const location = useLocation()
+  // const { fav } = location.state
 
   const [fs, setFs] = useState([]);
-  console.log(fs);
-  const kkk = (index) => {
-    fav.splice(index, 1);
-    setFs(Object.values([...fav]));
-  };
+
+  useEffect(() => {
+    axios.get(
+        `https://shrouded-mountain-15003.herokuapp.com/https://shrouded-mountain-15003.herokuapp.com/https://zzrb-494.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/MatchList-CheckExistingWishList?customerNo=${retrieveCustomerId(searchParams)}`
+      )
+      .then((res) => setFs(Object.values(res.data)));
+  }, []);
+
+  // const remove = (index) => {
+  //   fav.fav.splice(index, 1);
+  //   setFs(Object.values([...fav]));
+  // };
+
+  console.log(fs)
+
   return (
     <div className="favori">
       <div className="favoribg">
         <span> Your Favourite</span>
       </div>
-      {fav.map((k, index) => (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center"
-          }}
-        >
-          <div
-            style={{
-              backgroundImage: `url(https://image.tmdb.org/t/p/w500${k.url})`,
-              margin: "10px",
-              display: "flex",
-              flexDirection: "row",
-              flexWrap: "wrap",
-              alignItems: "center",
-              position: "relative"
-            }}
-            className="card"
-          >
-            <button
-              style={{
-                position: "absolute",
-                top: "2px",
-                right: "2px",
-                backgroundColor: "white",
-                borderRadius: "50%"
-              }}
-              onClick={()=>kkk(index)}
-            />
-            <span>{k.name}</span>
-          </div>
+      <div className="body card-body product-card-container">
+        <div className="card-body container">
+          {fs.map((product, index) => (
+            typeof product !== 'string' ? (
+            <div key={index} className="wrapper-style">
+              <Card product={product} />
+
+              {/* <button
+                  className="btn"
+                  // onClick={ () => remove(index) }
+                >Remove</button> */}
+            </div> ) : ( <div></div> )
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }

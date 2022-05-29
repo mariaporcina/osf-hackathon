@@ -10,6 +10,12 @@ import CardFooter from './CardFooter';
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { searchParams } from "../App";
+
+function retrieveCustomerId(params) {
+  return params.split('=')[1];
+}
+
 // export const fav = []
 
 export const ProductCard = (props) => {
@@ -28,20 +34,25 @@ export const ProductCard = (props) => {
       .then((res) => setProducts(Object.values(res.data)));
   }, []);
 
-
   const addToFavorite = (direction) => {
     if(direction === 'right'){
       const swipedElement = products[0];
+      const customerId = retrieveCustomerId(searchParams);
+
+      saveToMatchList(customerId, swipedElement.productID);
       setFav([...fav, swipedElement]);
     }
     remove();
   };
 
+  const saveToMatchList = (customerId, productId) => {
+    axios.post(`https://shrouded-mountain-15003.herokuapp.com/https://zzrb-494.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/MatchList-AddToMatchList?productID=${productId}&customerNo=${customerId}`)
+    .then(res => console.log(res));
+  }
+
   const remove = () => {
     setProducts(products.slice(1, products.length));
   }
-
-  console.log(fav)
 
   return (
     <div className="body card-body product-card-container">
