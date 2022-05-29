@@ -72,7 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 =====================================================================================================================
 # Endpoints created for plugin StoreMatch
-### `/Match-CategoryList`
+### `GET:/Match-CategoryList`
 Exemple of return:
 ##
     "0": {
@@ -84,9 +84,9 @@ Exemple of return:
     }
 ##
 
-### `/Match-ProductListByCategory`
-@param categoryID
-@param customerNo
+### `GET:/Match-ProductListByCategory`
+@param `categoryID`
+@param `customerNo`
 Example of return:
 ##
     "0": {
@@ -103,8 +103,8 @@ Example of return:
 ##
 
 
-### `/Match-CheckExistingWishList`
-@param customerNo
+### `GET:/Match-CheckExistingWishList`
+@param `customerNo`
 Example of Return
 ##
     "0": {
@@ -120,9 +120,9 @@ Example of Return
     }
 ##
 
-### `/Match-AddToMatchList`
-@param productID
-@param customerNo
+### `POST:/Match-AddToMatchList`
+@param `productID`
+@param `customerNo`
 Example of Return
 ##
     "0": {
