@@ -179,7 +179,7 @@ h1.suggestion {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 680px;
+  /* height: 680px; */
   overflow-y: scroll;
 }
 .product-card-container a {
