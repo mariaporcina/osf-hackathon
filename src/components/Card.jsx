@@ -1,22 +1,7 @@
 import React from "react";
-
-const cardStyles = {
-  background: "black",
-  borderRadius: 3,
-  width: "250px",
-  height: "250px",
-  cursor: "pointer",
-  userSelect: "none",
-  position: "absolute",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  top: 0,
-  color: 'black'
-};
+import './Components.css'
 
 const Card = ({ zIndex = 0, product }) => {
-  console.log(product);
   if(typeof product !== 'string'){
     return (
       <div
@@ -35,7 +20,7 @@ const Card = ({ zIndex = 0, product }) => {
             backgroundColor: "black"
           }}
         >
-          <div style={{ ...cardStyles, zIndex }}>{ product.productID }</div>
+          <div >{ product.productID }</div>
         </h4>
       </div>
     )
@@ -52,7 +37,7 @@ const Card = ({ zIndex = 0, product }) => {
             backgroundColor: "black"
           }}
         >
-          <div style={{ ...cardStyles, zIndex }}>{ product }</div>
+          <div>{ product }</div>
         </h4>
       </div>
     )

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/Footer.css";
 
-export default function Footer(props) {
+export default function CardFooter(props) {
   return (
     <div className="footer">
       <div className="button close-button" onClick={props.left}>
