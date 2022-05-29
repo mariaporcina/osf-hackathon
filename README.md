@@ -105,7 +105,7 @@ Example of return:
 ##
 
 
-### `GET:/Match-CheckExistingWishList`
+### `GET:/MatchList-CheckExistingWishList`
 @param `customerNo`
 
 Example of Return:
@@ -123,7 +123,7 @@ Example of Return:
     }
 ##
 
-### `POST:/Match-AddToMatchList`
+### `POST:/MatchList-AddToMatchList`
 @param `productID`
 
 @param `customerNo`
