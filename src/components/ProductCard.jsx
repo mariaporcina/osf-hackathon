@@ -10,14 +10,11 @@ import CardFooter from './CardFooter';
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+export const fav = []
 
 export const ProductCard = (props) => {
   const location = useLocation()
   const { from } = location.state
-
-  console.log(from.sub)
-
-  console.log(props.query)
 
   const [products, setProducts] = useState([]);
   const [fav, setFav] = useState([]);
@@ -46,14 +43,15 @@ export const ProductCard = (props) => {
 
 
   return (
-    <div className="body card-body">
-      <Link to="/">retornar a página inicial</Link>
+    <div className="body card-body product-card-container">
+      <Link to="/">Back to Category Selection</Link>
+      <Link to="/favs">My Favorites</Link>
       <div className="card-body container">
         {( products.length > 0 ) ? (
           <div className="wrapper-style">
-            <Swipeable
+            <Swipeable limit={300} min={100}
               buttons={({ right, left }) => (
-                <div className="actionsStyles">
+                <div className="actions-styles">
                   <CardFooter right={right} left={left} />
                 </div>
               )}

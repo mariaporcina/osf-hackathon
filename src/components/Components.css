@@ -26,14 +26,6 @@
   /* border: 1px solid black; */
 }
 
-.actionsStyles {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 12;
-  border: 5px solid purple;
-
-}
-
 .header {
   position: absolute;
   top: 0px;
@@ -60,100 +52,22 @@ h1.suggestion {
   z-index: -1;
 }
 
-
-
-.footer .replay {
-  background: #fcfafa;
-  box-shadow: 30px 30px 60px 5px #bebebe, -20px -20px 30px #ffffff;
-  color: blue;
-}
-
-.footer .close {
-  background: #fcfafa;
-  box-shadow: 20px 20px 30px #bebebe, -20px -20px 60px #ffffff;
-  color: red;
-}
-
-.footer .star {
-  background: rgb(252, 247, 247);
-  box-shadow: 20px 20px 30px #bebebe, -20px -20px 60px #ffffff;
-  color: green;
-}
-
-.footer .fav {
-  background: rgb(252, 247, 247);
-  box-shadow: 20px 20px 30px #bebebe, -20px -20px 60px #ffffff;
-  color: rgb(240, 68, 96);
-}
-
-.footer .flash {
-  background: rgb(252, 247, 247);
-  box-shadow: 20px 20px 30px #bebebe, -20px -20px 60px #ffffff;
-  color: blueviolet;
-}
-
-.header .header_left {
-  background: rgb(252, 247, 247);
-  box-shadow: 2px 0px 10px #bebebe, -20px -20px 60px #ffffff;
-}
-
-.header .header_right {
-  background: rgb(252, 247, 247);
-  box-shadow: 2px 0px 10px #bebebe, -10px -10px 20px #ffffff;
-}
-
-.favoribg {
-  background-color: rgb(10, 7, 8);
-  color: white;
-  box-shadow: 2px 0px 10px #bebebe, -10px -10px 20px #ffffff;
-  border-radius: 99px;
-  width: 60%;
-  display: flex;
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-.favoribg {
-  font-size: 25px;
-  font-weight: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @media only screen and (min-width: 480px) {
   .body_container {
     margin-top: 15vh;
     margin-bottom: 5vh;
   }
 
-  .card {
+  /* .card {
     padding: 1px;
     max-width: 115vw;
     height: 60vh;
     background-size: cover;
     background-position: center center;
-  }
+  } */
 
   .footer {
     bottom: 35px;
-  }
-
-  .repaly.MuiIconButton-sizeSmall {
-    size: small;
-  }
-
-  .favorbg {
-    margin-left: 20%;
-    margin-right: 20%;
-  }
-
-  .favoribg>span {
-    font-size: 27px;
-  }
-
-  .card>span {
-    font-size: 20px;
   }
 }
 
@@ -163,14 +77,14 @@ h1.suggestion {
     margin-bottom: 5vh;
   }
 
-  .card {
+  /* .card {
     padding: 3px;
     max-width: 85vw;
     min-width: 65vw;
     height: 61vh;
     background-size: cover;
     background-position: center center;
-  }
+  } */
 
   .footer {
     bottom: 6vh;
@@ -190,14 +104,21 @@ h1.suggestion {
 .categories-page-container {
   backdrop-filter: blur(20px);
   height: 100%;
-  margin-top: 15vh;
+  margin-top: 5vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
 }
 
+.categories-page-container .title-container h1{
+  font-family: 'Kaushan Script', sans-serif;
+  font-size: 5rem;
+}
+
 .category-cards-container {
+  margin-top: 10vh;
   display: flex;
   padding: 35px 320px;
   justify-content: space-between;
@@ -242,4 +163,55 @@ h1.suggestion {
   font-size: 1rem;
 }
 
-/* Individual Category Card */
+/* products cards */
+.product-card-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.product-card-container a {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Kaushan Script', sans-serif;
+}
+
+.product-card-container .card-body{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.product-card-container .wrapper-style {
+  /* border: 3px solid rgb(75, 65, 225); */
+  background-color: rgb(100, 100, 100);
+  border-radius: 20px;
+  padding: 10px 0;
+  min-width: 25vw;
+}
+
+.product-card-container .actions-styles {
+  /* border: 1px solid rgb(242, 72, 217); */
+  color: #fff;
+  font-size: 3rem;
+}
+
+.product-card-container .product-image-container {
+  padding: 0 5%;
+  height: 45vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* border: 3px solid rgb(22, 220, 22); */
+
+}
+
+.product-title {
+  text-align: center;
+  font-family: 'kaushan Script', sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+}
+

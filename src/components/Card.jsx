@@ -1,46 +1,34 @@
 import React from "react";
-import './Components.css'
+import "./Components.css";
 
 const Card = ({ zIndex = 0, product }) => {
-  if(typeof product !== 'string'){
+  if (typeof product !== "string") {
     return (
-      <div
-        style={{
-          backgroundImage: `url(${product.productImage[0]})`
-        }}
-        className="card"
-      >
-        <h4
+      <>
+      <div className="product-title">
+          <h1>
+            {product.productName}
+          </h1>
+        </div>
+      {/* <div className="product-image-container"> */}
+        <div
           style={{
-            color: "white",
-            position: "absolute",
-            bottom: "0",
-            backgroundSize: "10px",
-            borderRadius: "99px",
-            backgroundColor: "black"
+            backgroundImage: `url(${product.productImage[0]})`,
           }}
+          className="card product-image-container"
         >
-          <div >{ product.productID }</div>
-        </h4>
-      </div>
-    )
+        </div>
+      {/* </div> */}
+      </>
+    );
   } else {
     return (
       <div className="card">
-        <h4
-          style={{
-            color: "white",
-            position: "absolute",
-            bottom: "0",
-            backgroundSize: "10px",
-            borderRadius: "99px",
-            backgroundColor: "black"
-          }}
-        >
-          <div>{ product }</div>
-        </h4>
+        <h1>
+          <div>{product}</div>
+        </h1>
       </div>
-    )
+    );
   }
 };
 
