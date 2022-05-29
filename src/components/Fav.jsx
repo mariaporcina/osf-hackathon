@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Card from "./Card";
+import { Link } from 'react-router-dom';
+
 import { searchParams } from "../App";
 
 function retrieveCustomerId(params) {
@@ -34,7 +36,8 @@ export default function Fav() {
   return (
     <div className="favori">
       <div className="favoribg">
-        <span> Your Favourite</span>
+        <h2>Your Favourite</h2>
+        <h3 className="backToHome"><Link to="/">Back to Category Selection</Link></h3>
       </div>
       <div className="body card-body product-card-container">
         <div className="card-body container">
