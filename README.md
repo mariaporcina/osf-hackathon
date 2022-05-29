@@ -89,17 +89,17 @@ Exemple of return:
 @param customerNo
 Example of return:
 ##
-##    "0": {
-##        "productName": "High Waist Pant",
-##        "productID": "25588935M",
-##        "productPrice": 0,
-##        "productImage": {},
-##        "productURL": "https://zzrb-494.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/Catalog-Show?pid=25588935M",
-##        "productDescription": {},
-##        "productBrand": null,
-##        "productCategory": "newarrivals-womens",
-##        "productCategoryName": "Womens"
-##    }
+    "0": {
+        "productName": "High Waist Pant",
+        "productID": "25588935M",
+        "productPrice": 0,
+        "productImage": {},
+        "productURL": "https://zzrb-494.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/Catalog-Show?pid=25588935M",
+        "productDescription": {},
+        "productBrand": null,
+        "productCategory": "newarrivals-womens",
+        "productCategoryName": "Womens"
+    }
 ##
 
 
@@ -107,17 +107,17 @@ Example of return:
 @param customerNo
 Example of Return
 ##
-##    "0": {
-##        "productName": "High Waist Pant",
-##        "productID": "25588935M",
-##        "productPrice": 0,
-##        "productImage": {},
-##        "productURL": "https://zzrb-494.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/Catalog-Show?pid=25588935M",
-##        "productDescription": {},
-##        "productBrand": null,
-##        "productCategory": "newarrivals-womens",
-##        "productCategoryName": "Womens"
-##    }
+    "0": {
+        "productName": "High Waist Pant",
+        "productID": "25588935M",
+        "productPrice": 0,
+        "productImage": {},
+        "productURL": "https://zzrb-494.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/Catalog-Show?pid=25588935M",
+        "productDescription": {},
+        "productBrand": null,
+        "productCategory": "newarrivals-womens",
+        "productCategoryName": "Womens"
+    }
 ##
 
 ### `/Match-AddToMatchList`
@@ -125,8 +125,8 @@ Example of Return
 @param customerNo
 Example of Return
 ##
-##    "0": {
-##        "success": "true",
-##        "message": "done",
-##    }
+    "0": {
+        "success": "true",
+        "message": "done",
+    }
 ##
