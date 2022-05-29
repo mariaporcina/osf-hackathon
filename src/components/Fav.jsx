@@ -29,6 +29,8 @@ export default function Fav() {
   //   setFs(Object.values([...fav]));
   // };
 
+  console.log(fs)
+
   return (
     <div className="favori">
       <div className="favoribg">
@@ -37,6 +39,7 @@ export default function Fav() {
       <div className="body card-body product-card-container">
         <div className="card-body container">
           {fs.map((product, index) => (
+            typeof product !== 'string' ? (
             <div key={index} className="wrapper-style">
               <Card product={product} />
 
@@ -44,7 +47,7 @@ export default function Fav() {
                   className="btn"
                   // onClick={ () => remove(index) }
                 >Remove</button> */}
-            </div>
+            </div> ) : ( <div></div> )
           ))}
         </div>
       </div>
