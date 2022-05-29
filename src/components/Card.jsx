@@ -1,61 +1,37 @@
 import React from "react";
-
-const cardStyles = {
-  background: "black",
-  borderRadius: 3,
-  width: "250px",
-  height: "250px",
-  cursor: "pointer",
-  userSelect: "none",
-  position: "absolute",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  top: 0,
-  color: 'black'
-};
+import "./Components.css";
 
 const Card = ({ zIndex = 0, product }) => {
-  console.log(product);
-  if(typeof product !== 'string'){
+  if (typeof product !== "string") {
     return (
-      <div
-        style={{
-          backgroundImage: `url(${product.productImage[0]})`
-        }}
-        className="card"
-      >
-        <h4
+      <>
+      <div className="product-title">
+          <h1>
+            {product.productName}
+          </h1>
+        </div>
+      {/* <div className="product-image-container"> */}
+        <div
           style={{
-            color: "white",
-            position: "absolute",
-            bottom: "0",
-            backgroundSize: "10px",
-            borderRadius: "99px",
-            backgroundColor: "black"
+            backgroundImage: `url(${product.productImage[0]})`,
           }}
+          className="card product-image-container"
         >
-          <div style={{ ...cardStyles, zIndex }}>{ product.productID }</div>
-        </h4>
-      </div>
-    )
+        </div>
+        <div className="price-holder d-flex text-align-center">
+          <h3>{product.productCurrency} {product.productPrice}</h3>
+        </div>
+      {/* </div> */}
+      </>
+    );
   } else {
     return (
       <div className="card">
-        <h4
-          style={{
-            color: "white",
-            position: "absolute",
-            bottom: "0",
-            backgroundSize: "10px",
-            borderRadius: "99px",
-            backgroundColor: "black"
-          }}
-        >
-          <div style={{ ...cardStyles, zIndex }}>{ product }</div>
-        </h4>
+        <h1>
+          <div>{product}</div>
+        </h1>
       </div>
-    )
+    );
   }
 };
 

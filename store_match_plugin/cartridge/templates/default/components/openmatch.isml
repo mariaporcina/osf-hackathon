@@ -1,1 +1,0 @@
-<button class="btn btn-primary button-open-modal" data-url="${URLUtils.url('Modal-Show')}">Open</button>

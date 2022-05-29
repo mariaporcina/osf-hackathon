@@ -1,19 +1,29 @@
 import React, { useState } from "react";
-import { favi } from "./Card";
-import CancelIcon from "@material-ui/icons/Cancel";
+import { useLocation } from "react-router-dom";
+// import { fav } from "./ProductCard";
+
+
+
 export default function Fav() {
+
+  const location = useLocation()
+  const { fav } = location.state
+  
+  console.log(fav)
+  console.log(typeof fav)
+
   const [fs, setFs] = useState([]);
   console.log(fs);
   const kkk = (index) => {
-    favi.splice(index, 1);
-    setFs([...favi]);
+    fav.splice(index, 1);
+    setFs(Object.values([...fav]));
   };
   return (
     <div className="favori">
       <div className="favoribg">
         <span> Your Favourite</span>
       </div>
-      {favi.map((k, index) => (
+      {fav.map((k, index) => (
         <div
           style={{
             display: "flex",
@@ -33,8 +43,7 @@ export default function Fav() {
             }}
             className="card"
           >
-            <CancelIcon
-              fontSize="large"
+            <button
               style={{
                 position: "absolute",
                 top: "2px",
